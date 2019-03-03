@@ -29,14 +29,15 @@ const Product = db.define('product', {
 const SyncAndSeed = () => {
     return db.sync({force: true})
     .then(()=>{
-        Product.create({name: 'Ola', id1: 1})
-        Category.create({name: 'Iyan'})
+        Product.bulkCreate([{name: 'Beans', id1: 1}, {name: 'Salad', id1: 2}])
+        Category.bulkCreate([{name: 'Protein'}, {name: 'Vegetable'}])
     }).catch((err)=>{
         console.log(`This is my error: ${err}`)
     })
 } 
 
 Category.hasMany(Product)
+//Product.hasOne(Category)
 
 //SyncAndSeed()
 
