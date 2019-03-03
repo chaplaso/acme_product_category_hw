@@ -5,7 +5,8 @@
   "main": "db.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js --ignore src"
+    "start-server": "nodemon server.js --ignore src",
+    "start": "npm run start-server & nod webpack -w"
   },
   "keywords": [],
   "author": "",
@@ -27,11 +28,10 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
-    "webpack": "^3.9.1",
-    "webpack-dev-server": "^2.9.5"
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
   }
 }
