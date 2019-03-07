@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 const morgan = require('morgan')
 const methodOverride = require('method-override')
-const PORT = 5005;
+const PORT = 5050;
 
 
 
@@ -17,7 +17,7 @@ app.use(morgan('dev'));
 app.get('/api/categories', (req, res, next)=>{
     Category.findAll().then(categories =>{
         console.log(categories)
-        res.send(categories.map(each => `<ul> ${each.name} </ul>`)).join(" ")
+        res.send(categories)
     })
    // res.send(path(''))
 })

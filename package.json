@@ -4,14 +4,17 @@
   "description": "",
   "main": "db.js",
   "scripts": {
+    "webpack": "webpack",
+    "develop": "npm run webpack -- --watch & npm run start-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-server": "nodemon server.js --ignore src",
-    "start": "npm run start-server & nod webpack -w"
+    "start-server": "nodemon server.js --ignore src/*",
+    "start": "npm run develop npm run start-server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "l": "^0.6.0",
@@ -24,14 +27,21 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "sequelize": "^4.43.0",
-    "volleyball": "^1.5.1"
+    "volleyball": "^1.5.1",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3"
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.24.1",
-    "webpack": "^4.1.1",
-    "webpack-cli": "^2.0.12"
+    "babel-preset-react": "^6.24.1"
+  },
+  "babel": {
+    "presets": [
+      "react"
+    ]
   }
 }
